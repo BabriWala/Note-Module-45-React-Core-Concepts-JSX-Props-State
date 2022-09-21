@@ -1,24 +1,51 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Heroes from './components/Heroes';
+import Nayok from './components/Nayok';
+
+  const southHeroes = [
+    {
+      id: 1,
+      name: 'Allu Arjun',
+      age: 45,
+      bestMovie: 'Sarraianodu'
+    },
+    {
+      id: 2,
+      name:'Prabhas',
+      age: 50,
+      bestMovie: 'Bahubali'
+    },
+    {
+      id: 3,
+      name: 'Mahesh Babu',
+      age: 60,
+      bestMovie: 'Maharashi'
+    },
+    {
+      id: 4,
+      name: 'Jr. NTR',
+      age: 52,
+      bestMovie: 'RRR'
+    }
+  ]
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const nayoks = ['Sallu', 'Amir', 'Shahrukh', "shahriar"]
+
+  return(
+    <>
+      {/* <Nayok name={nayoks[0]}></Nayok>
+      <Nayok name={nayoks[1]}></Nayok>
+      <Nayok name={nayoks[2]}></Nayok>
+      <Nayok name={nayoks[3]}></Nayok> */}
+      {
+        nayoks.map(nayok => <Nayok name={nayok}></Nayok>)
+      }
+      {
+        southHeroes.map(hero => <Heroes hero={hero}  key={hero.id}></Heroes>)
+      }
+    </>
   );
 }
 
